@@ -2,11 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { MatToolbarModule } from '@angular/material';
 
 
 import { AppComponent } from './app.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,9 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TooltipModule.forRoot()
+    BrowserAnimationsModule,
+    MatToolbarModule
+   
     
   ],
   providers: [],
