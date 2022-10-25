@@ -1,13 +1,14 @@
-.cataLouge{
-   padding-top: 20px;
+.cataLouge {
+    padding-top: 20px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    width:100%;
-    gap:7px;
+    width: 100%;
+    gap: 7px;
 }
-.content{
-    width: 20% ;
-    
+
+.content {
+    width: 20%;
+
 }

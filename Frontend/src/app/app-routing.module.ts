@@ -13,7 +13,6 @@ const routes: Routes = [
   { path: "register", component: RegisterComponent, pathMatch: "full" },
   { path: "catalouge", component: CatalougeComponent, pathMatch: "full" },
   { path: "catalouge/:workoutTitle/:workoutId", component: WorkoutComponent, pathMatch: "full" },
-
 ];
 
 @NgModule({

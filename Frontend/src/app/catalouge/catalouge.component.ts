@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {catalouges} from "../../Constant/workoutsCatalouges";
+import { catalouges } from "../../Constant/workoutsCatalouges";
 
 @Component({
   selector: 'app-catalouge',
@@ -7,24 +7,24 @@ import {catalouges} from "../../Constant/workoutsCatalouges";
   styleUrls: ['./catalouge.component.css']
 })
 export class CatalougeComponent implements OnInit {
-title="Workouts Catalouge";
-searchValue:string;
-catalougeItems=catalouges;
+  title = "Workouts Catalouge";
+  searchValue: string;
+  catalougeItems = catalouges;
 
   constructor() { }
 
   ngOnInit() {
     console.log(this.catalougeItems);
   }
-  searchHandler():any{
-    let serachResult=[];
-    
-    if(this.searchValue.length){
-      serachResult=this.catalougeItems.filter(item=>item.title.toLowerCase().includes(this.searchValue.toLocaleLowerCase()));
-    }else{
-      serachResult=catalouges;
+  searchHandler(): any {
+    let serachResult = [];
+
+    if (this.searchValue.length) {
+      serachResult = this.catalougeItems.filter(item => item.title.toLowerCase().includes(this.searchValue.toLocaleLowerCase()));
+    } else {
+      serachResult = catalouges;
     }
-    this.catalougeItems=serachResult;
-    
+    this.catalougeItems = serachResult;
+
   }
 }
