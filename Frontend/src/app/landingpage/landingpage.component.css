@@ -5,5 +5,10 @@ img {
     background-size: cover;
     width: 100%;
     height: auto;
+    filter: brightness(40%);
+}
 
+.content {
+    padding-left: 65rem;
+    padding-top: 15rem;
 }
