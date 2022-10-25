@@ -16,15 +16,14 @@ export class CatalougeComponent implements OnInit {
   ngOnInit() {
     console.log(this.catalougeItems);
   }
-  searchHandler(): any {
+  searchHandler(value: string): any {
     let serachResult = [];
 
-    if (this.searchValue.length) {
-      serachResult = this.catalougeItems.filter(item => item.title.toLowerCase().includes(this.searchValue.toLocaleLowerCase()));
+    if (value.length) {
+      serachResult = this.catalougeItems.filter(item => item.title.toLowerCase().includes(value.toLowerCase()));
     } else {
       serachResult = catalouges;
     }
     this.catalougeItems = serachResult;
-
   }
 }
