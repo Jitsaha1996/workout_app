@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { MatToolbarModule,MatError, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatToolbarModule,MatError, MatFormFieldModule, MatInputModule, MatCardModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 
@@ -12,6 +12,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeadersComponent } from './headers/headers.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { CatalougeComponent } from './catalouge/catalouge.component';
+import { FooterComponent } from './footer/footer.component';
+import { WorkoutComponent } from './workout/workout.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,9 @@ import { RegisterComponent } from './register/register.component';
     HeadersComponent,
     LoginComponent,
     RegisterComponent,
+    CatalougeComponent,
+    FooterComponent,
+    WorkoutComponent,
     
   ],
   imports: [
@@ -30,7 +36,8 @@ import { RegisterComponent } from './register/register.component';
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule 
     
    
     
