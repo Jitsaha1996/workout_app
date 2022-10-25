@@ -66,7 +66,8 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "workout-app:build:production"
+              "browserTarget": "workout-app:build:production",
+              "proxyConfig": "src/proxy.conf.json"
             }
           }
         },

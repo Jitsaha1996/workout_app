@@ -7,8 +7,12 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HeadersComponent implements OnInit {
   @Input() title: string;
+  userInfo = localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")) : "";
+
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    console.log("userInfo", this.userInfo);
+  }
 
 }
