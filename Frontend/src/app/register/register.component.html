@@ -1,0 +1,85 @@
+<app-headers [title]="title"></app-headers>
+<div class="container">
+    <div col-12>
+        <h2 mat-dailog-title class="text-center py-2">
+            {{title}}
+        </h2>
+
+        <form novalidate autocomplete="off" [formGroup]="registerForm" (submit)="createRegister()">
+            <div class="my-3">
+                <div  style="width:100%" class="text-center">
+                <span style="width:20%">Name </span>
+                <mat-form-field appearance="outline" style="width:50%">
+                   
+                       
+                        <input matInput  formControlName="name" [ngClass]="{'is-invalid': (registerForm.get('name').touched || 
+                        registerForm.get('name').dirty) && !registerForm.get('name').valid }" required/>
+                        <mat-error *ngIf="registerForm.get('name').hasError('required')">
+                            Please enter name!
+                        </mat-error>
+                   
+                </mat-form-field>
+            </div>
+            <div  style="width:100%" class="text-center">
+                <span style="width:20%">Email </span>
+                <mat-form-field style="width:50%" appearance="outline" >
+                    
+                       
+                        <input matInput  type="email" formControlName="email" [ngClass]="{'is-invalid': (registerForm.get('email').touched || 
+                        registerForm.get('email').dirty) && !registerForm.get('email').valid }" required/>
+                        <mat-error *ngIf="registerForm.get('email').hasError('required')">
+                            Please enter email!
+                        </mat-error>
+                   
+                </mat-form-field>
+            </div>
+            <div  style="width:100%" class="text-center">
+            <span style="width:20%">Password </span>
+                <mat-form-field style="width:50%" appearance="outline">
+                  
+                    <input matInput type="password" formControlName="password" [ngClass]="{'is-invalid': (registerForm.get('password').touched || 
+                    registerForm.get('password').dirty) && !registerForm.get('password').valid }" required/>
+                    <mat-error *ngIf="registerForm.get('password').hasError('required')">
+                        Please enter password!
+                    </mat-error>
+               
+                </mat-form-field>
+            </div>
+            <div style="width:100%"  class="text-center">
+            <span style="width:20%"> Confirm Password </span>
+                <mat-form-field style="width:50%" appearance="outline" > 
+                   
+                    <input matInput  type="password" formControlName="confirmPassword" [ngClass]="{'is-invalid': (registerForm.get('confirmPassword').touched || 
+                    registerForm.get('confirmPassword').dirty) && !registerForm.get('confirmPassword').valid }" required/>
+                    <mat-error *ngIf="registerForm.get('confirmPassword').hasError('required')">
+                        Please enter password!
+                    </mat-error>
+                    <mat-error *ngIf="registerForm?.get('password')?.value!==registerForm?.get('confirmPassword')?.value">
+                       Password mismatched!
+                    </mat-error>
+                    
+                  
+                </mat-form-field>
+            </div>
+                  
+                    
+                    
+                    <div class="mt-3 text-center">
+                        <button mat-raised-button (click)="onNoClick()" class="mx-3" style="background-color: white">Cancel</button>
+                        <button mat-raised-button type="submit" [disabled]="!registerForm.valid || registerForm?.get('password')?.value!==registerForm?.get('confirmPassword')?.value " class="saveBtn">
+                            Signup </button>
+                    </div>
+                    <div class="mt-3 text-center" >
+                        Have an account <a routerLink="/login">login</a>
+                    </div>
+
+           
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+</div>

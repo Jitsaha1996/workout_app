@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landingpage.component.css']
 })
 export class LandingpageComponent implements OnInit {
- 
+  title="Welcome Guest"
   constructor() { }
 
   ngOnInit() {
