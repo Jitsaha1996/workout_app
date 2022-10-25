@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,9 @@ export class LoginComponent implements OnInit {
   title = "Login"
   registerForm: FormGroup;
 
-  constructor(private frmBuilder: FormBuilder) { }
+  constructor(
+    private frmBuilder: FormBuilder,
+    private router: Router) { }
 
   ngOnInit() {
     this.registerForm = this.frmBuilder.group({
@@ -25,5 +28,9 @@ export class LoginComponent implements OnInit {
     } else {
       console.log(this.registerForm.getRawValue());
     }
+  }
+
+  onNoClick(): any {
+    this.router.navigateByUrl('/');
   }
 }
