@@ -1,5 +1,8 @@
-const express=require('express');
-const app=express();
+const express = require('express');
+const cors = require('cors');
+const app = express();
+app.use(cors());
+
 const notes=require('./data/nots');
 const dotenv=require('dotenv');
 const connectDb=require('./config/db');
@@ -23,7 +26,16 @@ app.get('/api/notes',(req,res)=>{
 //     res.send(note);
 // })
 
-app.use('/api/users',userRoutes);
+
+
+app.use('/api/users', userRoutes);
+// app.use(function (req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers", "Origin,X-Requested-With,Content-Type,Accept");
+//     res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, HEAD, OPTIONS");
+//     next();
+// });
+
 app.use(notFound);
 app.use(errorHandler);
 const PORT=process.env.PORT||5000;
