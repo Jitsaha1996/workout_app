@@ -1,13 +1,8 @@
-.cataLouge{
-   padding-top: 20px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    width:100%;
-    gap:7px;
+.content {
+    width: 20%;
+    height: 20%;
 }
-.content{
-    width: 20% ;
-    
+
+.card:hover {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
 }
