@@ -1,5 +1,19 @@
 <div>
-    <mat-toolbar>
-        <span class="text-danger"><i class="fa-solid fa-house"></i>{{title}}</span>
-      </mat-toolbar>
+  <mat-toolbar class="bg-primary">
+    <div class="d-flex w-100 justify-content-between align-items-center">
+      <div>
+        <div class="d-flex align-items-center text-white">
+          <i class="fa-solid fa-dumbbell fa-rotate-by" style="--fa-rotate-angle: -45deg;"></i>
+          &nbsp;{{title}}
+        </div>
+      </div>
+      <div>
+        <div class="d-flex align-items-center text-white fw-light">
+          Guest&nbsp;&nbsp;
+          <i class="fa-solid fa-circle-user fa-2x"></i>
+        </div>
+      </div>
+    </div>
+
+  </mat-toolbar>
 </div>
