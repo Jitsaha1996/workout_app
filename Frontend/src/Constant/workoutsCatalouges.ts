@@ -7,7 +7,7 @@ export const catalouges = [
          which is sometimes referred to as aerobic exercise, is any rhythmic activity 
         that raises your heart rate into your target heart rate zone.
          This is the zone where you burn the most fat and calories.`,
-    url: `https://olimpsport.com/media/mageplaza/blog/post/image//w/y/wyprobuj-5-najlepszych-cwiczen-cardio-na-silowni_5.jpg`
+    url: `https://s.yimg.com/ny/api/res/1.2/b9G2z1z.tntSyO1v6qsMlQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTY0MA--/https://s.yimg.com/uu/api/res/1.2/olpIggogDm1WHqGIlAmzSQ--~B/aD04ODg7dz04ODg7YXBwaWQ9eXRhY2h5b24-/http://media.zenfs.com/en-GB/homerun/refinery_29_uk_109/4fd7f95621f0fce2e43f50f138ce590e`
   },
   {
     _id: "2",
@@ -20,13 +20,12 @@ export const catalouges = [
   },
   {
     _id: "3",
-    title: "Situp",
+    title: "Sit Up",
     content:
-      `Cardio exercise,
-           which is sometimes referred to as aerobic exercise, is any rhythmic activity 
-          that raises your heart rate into your target heart rate zone.
+      `Cardio exercise, which is sometimes referred to as aerobic exercise,is any rhythmic activity
+      that raises your heart rate into your target heart rate zone.
            This is the zone where you burn the most fat and calories.`,
-    url: "https://zurubunch.com/wp-content/uploads/2021/10/sit-up-bar-assistant-416x416.jpg",
+    url: "https://thumbs.gfycat.com/JollyGiantAfricanaugurbuzzard-size_restricted.gif",
   },
   {
     _id: "4",
@@ -36,7 +35,7 @@ export const catalouges = [
            which is sometimes referred to as aerobic exercise, is any rhythmic activity 
           that raises your heart rate into your target heart rate zone.
            This is the zone where you burn the most fat and calories.`,
-    url: "https://zurubunch.com/wp-content/uploads/2021/10/sit-up-bar-assistant-416x416.jpg",
+    url: "https://media.tenor.com/u2-VJiigKCkAAAAC/exercise-jump.gif",
   },
   {
     _id: "5",
@@ -46,7 +45,7 @@ export const catalouges = [
            which is sometimes referred to as aerobic exercise, is any rhythmic activity 
           that raises your heart rate into your target heart rate zone.
            This is the zone where you burn the most fat and calories.`,
-    url: "https://zurubunch.com/wp-content/uploads/2021/10/sit-up-bar-assistant-416x416.jpg",
+    url: "https://hips.hearstapps.com/hmg-prod/images/workouts/2016/03/plank-1457045584.gif",
   },
   {
     _id: "6",
@@ -56,7 +55,7 @@ export const catalouges = [
            which is sometimes referred to as aerobic exercise, is any rhythmic activity 
           that raises your heart rate into your target heart rate zone.
            This is the zone where you burn the most fat and calories.`,
-    url: "https://zurubunch.com/wp-content/uploads/2021/10/sit-up-bar-assistant-416x416.jpg",
+    url: "https://i0.wp.com/post.healthline.com/wp-content/uploads/2022/01/400x400_9_Best_Bodyweight_Shoulder_Exercises_for_Every_Body_Mountain_Climbers-1.gif",
   },
   {
     _id: "7",
@@ -66,7 +65,7 @@ export const catalouges = [
            which is sometimes referred to as aerobic exercise, is any rhythmic activity 
           that raises your heart rate into your target heart rate zone.
            This is the zone where you burn the most fat and calories.`,
-    url: "https://zurubunch.com/wp-content/uploads/2021/10/sit-up-bar-assistant-416x416.jpg",
+    url: "https://www.icegif.com/wp-content/uploads/jumping-jacks-icegif-5.gif",
   },
   {
     _id: "8",
@@ -76,7 +75,7 @@ export const catalouges = [
            which is sometimes referred to as aerobic exercise, is any rhythmic activity 
           that raises your heart rate into your target heart rate zone.
            This is the zone where you burn the most fat and calories.`,
-    url: "https://zurubunch.com/wp-content/uploads/2021/10/sit-up-bar-assistant-416x416.jpg",
+    url: "https://hips.hearstapps.com/ame-prod-menshealth-assets.s3.amazonaws.com/main/assets/bodyweight-squat.gif",
   },
   {
     _id: "9",
@@ -86,17 +85,17 @@ export const catalouges = [
            which is sometimes referred to as aerobic exercise, is any rhythmic activity 
           that raises your heart rate into your target heart rate zone.
            This is the zone where you burn the most fat and calories.`,
-    url: "https://zurubunch.com/wp-content/uploads/2021/10/sit-up-bar-assistant-416x416.jpg",
+    url: "https://media.tenor.com/fWiC9Ze5eUMAAAAC/lunges-exercise.gif",
   },
   {
     _id: "10",
-    title: "BuGlute bridge",
+    title: "Buglute Bridge",
     content:
       `Cardio exercise,
            which is sometimes referred to as aerobic exercise, is any rhythmic activity 
           that raises your heart rate into your target heart rate zone.
            This is the zone where you burn the most fat and calories.`,
-    url: "https://zurubunch.com/wp-content/uploads/2021/10/sit-up-bar-assistant-416x416.jpg",
+    url: "https://hips.hearstapps.com/hmg-prod/images/workouts/2016/08/glutebridgedynamic-1472218237.gif",
   },
   {
     _id: "11",
@@ -106,7 +105,7 @@ export const catalouges = [
            which is sometimes referred to as aerobic exercise, is any rhythmic activity 
           that raises your heart rate into your target heart rate zone.
            This is the zone where you burn the most fat and calories.`,
-    url: "https://zurubunch.com/wp-content/uploads/2021/10/sit-up-bar-assistant-416x416.jpg",
+    url: "https://media.tenor.com/DwuD868X1OUAAAAC/side-lunge.gif",
   },
   {
     _id: "12",
@@ -116,9 +115,7 @@ export const catalouges = [
            which is sometimes referred to as aerobic exercise, is any rhythmic activity 
           that raises your heart rate into your target heart rate zone.
            This is the zone where you burn the most fat and calories.`,
-    url: "https://zurubunch.com/wp-content/uploads/2021/10/sit-up-bar-assistant-416x416.jpg",
+    url: "https://thumbs.gfycat.com/SlushyMetallicAtlanticsharpnosepuffer-size_restricted.gif",
   },
-
-
 ];
 

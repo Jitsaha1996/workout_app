@@ -18,12 +18,14 @@ export class CatalougeComponent implements OnInit {
   }
   searchHandler(value: string): any {
     let serachResult = [];
+    this.catalougeItems = catalouges;
 
     if (value.length) {
       serachResult = this.catalougeItems.filter(item => item.title.toLowerCase().includes(value.toLowerCase()));
     } else {
       serachResult = catalouges;
     }
+
     this.catalougeItems = serachResult;
   }
 }
