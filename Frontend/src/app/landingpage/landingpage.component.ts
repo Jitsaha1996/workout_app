@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landingpage',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landingpage.component.css']
 })
 export class LandingpageComponent implements OnInit {
-  title="Welcome Guest"
-  constructor() { }
+  title = "Welcome Guest"
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
 
+  onLogin(): any {
+    this.router.navigateByUrl('/login');
+  }
+
+  onSignup(): any {
+    this.router.navigateByUrl('/register');
+  }
 }
