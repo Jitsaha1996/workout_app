@@ -15,7 +15,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private frmBuilder: FormBuilder,
     private router: Router,
-    private appservice: AppService) { }
+    private appservice: AppService
+  ) { }
 
   ngOnInit() {
     this.registerForm = this.frmBuilder.group({
@@ -30,8 +31,9 @@ export class RegisterComponent implements OnInit {
   }
 
   checkUserCredentials(): any {
-    if (localStorage.getItem("userInfo"))
+    if (localStorage.getItem("userInfo")) {
       this.router.navigateByUrl('/catalouge');
+    }
   }
 
   createRegister(): any {
