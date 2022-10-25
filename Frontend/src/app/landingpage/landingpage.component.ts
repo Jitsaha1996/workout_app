@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./landingpage.component.css']
 })
 export class LandingpageComponent implements OnInit {
-  title = "Welcome Guest"
+  title = "Welcome"
   constructor(
     private router: Router
   ) { }
