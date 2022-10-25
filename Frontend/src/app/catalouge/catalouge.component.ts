@@ -13,9 +13,8 @@ export class CatalougeComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    console.log(this.catalougeItems);
-  }
+  ngOnInit() { }
+
   searchHandler(value: string): any {
     let serachResult = [];
     this.catalougeItems = catalouges;
