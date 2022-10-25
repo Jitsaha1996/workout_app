@@ -29,6 +29,8 @@ export class RegisterComponent implements OnInit {
       return;
     } else {
       console.log(this.registerForm.getRawValue());
+
+
     }
   }
 
