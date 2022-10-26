@@ -32,10 +32,7 @@ export class HeadersComponent implements OnInit {
   logout() {
     localStorage.clear();
     this.router.navigateByUrl('/');
-    this.toastr.success('Log Out Successfully!', undefined, {
-      positionClass: 'toast-top-center'
-    });
-
+    this.toastr.success('Log Out Successfully!', undefined);
   }
 
 }

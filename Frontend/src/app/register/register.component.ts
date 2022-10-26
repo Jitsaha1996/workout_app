@@ -53,10 +53,7 @@ export class RegisterComponent implements OnInit {
         localStorage.setItem("userInfo", JSON.stringify(response));
         if (response) {
           this.router.navigateByUrl('/catalouge');
-          this.toastr.success(`Successfully signup   ${JSON.parse(localStorage.getItem("userInfo")).name}`,
-            undefined, {
-            positionClass: 'toast-top-center'
-          });
+          this.toastr.success(`Successfully signup   ${JSON.parse(localStorage.getItem("userInfo")).name}`, undefined);
         }
       }
       );
