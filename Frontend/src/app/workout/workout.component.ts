@@ -34,7 +34,7 @@ export class WorkoutComponent implements OnInit {
     this.toastr.info(`Timer has started`, undefined);
     this.interval = setInterval(() => {
       this.time += 1;
-      this.showtime = moment.utc(this.time * 1000).format('HH:mm:ss:mm');
+      this.showtime = moment.utc(this.time * 1000).format('HH:mm:ss');
     }, 1000);
   }
 
@@ -49,6 +49,7 @@ export class WorkoutComponent implements OnInit {
     this.toastr.info(`Timer reseted`, undefined);
     this.time = 0;
     this.showtime = moment.utc(0).format('HH:mm:ss');
+    clearInterval(this.interval);
   }
 
 }
