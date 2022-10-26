@@ -17,6 +17,7 @@ export class WorkoutComponent implements OnInit {
   interval = null;
   showtime = moment.utc(0).format('HH:mm:ss');
   isstart = false;
+  totalcalories = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -35,6 +36,7 @@ export class WorkoutComponent implements OnInit {
     this.interval = setInterval(() => {
       this.time += 1;
       this.showtime = moment.utc(this.time * 1000).format('HH:mm:ss');
+      this.totalcalories = this.time * this.catalougeItems[0].calories;
     }, 1000);
   }
 
@@ -49,6 +51,7 @@ export class WorkoutComponent implements OnInit {
     this.toastr.info(`Timer reseted`, undefined);
     this.time = 0;
     this.showtime = moment.utc(0).format('HH:mm:ss');
+    this.totalcalories = 0;
     clearInterval(this.interval);
   }
 
