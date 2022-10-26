@@ -28,8 +28,9 @@ export class LoginComponent implements OnInit {
   }
 
   checkUserCredentials(): any {
-    if (localStorage.getItem("userInfo"))
+    if (localStorage.getItem("userInfo")) {
       this.router.navigateByUrl('/catalouge');
+    }
   }
 
   createRegister(): any {

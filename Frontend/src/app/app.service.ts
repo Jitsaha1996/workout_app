@@ -19,7 +19,7 @@ export class AppService {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': "*",
-      'Authorization': `Bearer ${JSON.parse(localStorage.getItem("userInfo")).token}`
+      'Authorization': `Bearer ${localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")).token : null}`
     })
   };
 
