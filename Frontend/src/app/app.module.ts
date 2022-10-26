@@ -38,7 +38,6 @@ import { ToastrModule } from 'ngx-toastr';
     MatCardModule,
     MatTooltipModule,
     HttpClientModule,
-
     ToastrModule.forRoot(),
   ],
   providers: [],
