@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { catalouges } from "../../Constant/workoutsCatalouges";
 import * as moment from 'moment';
 import { ToastrService } from 'ngx-toastr';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-workout',
@@ -12,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 
 export class WorkoutComponent implements OnInit {
   title = "Workout";
-  catalougeItems = {};
+  catalougeItems;
   time = 0;
   interval = null;
   showtime = moment.utc(0).format('HH:mm:ss');
@@ -21,13 +22,25 @@ export class WorkoutComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router,
+    private appservice: AppService
   ) { }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('workoutId');
-    this.catalougeItems = catalouges.filter(item => item._id === id);
-    this.title = this.title + ` - ${this.catalougeItems[0].title}`;
+    this.getSingleWorkout(id);
+
+    // this.catalougeItems = catalouges.filter(item => item._id === id);
+
+  }
+
+  getSingleWorkout(id) {
+    this.appservice.fetchSingleWorkouts(id).subscribe(response => {
+      this.catalougeItems = response;
+      this.title = this.title + ` - ${this.catalougeItems.title}`;
+    })
+
   }
 
   start() {
@@ -36,7 +49,7 @@ export class WorkoutComponent implements OnInit {
     this.interval = setInterval(() => {
       this.time += 1;
       this.showtime = moment.utc(this.time * 1000).format('HH:mm:ss');
-      this.totalcalories = this.time * this.catalougeItems[0].calories;
+      this.totalcalories = this.time * this.catalougeItems.calories;
     }, 1000);
   }
 

@@ -37,4 +37,7 @@ export class AppService {
   fetchWorkouts() {
     return this.http.get(this.rootURL + '/workouts', this.httpOptionsForWorkouts);
   }
+  fetchSingleWorkouts(id: any) {
+    return this.http.get(this.rootURL + `/workouts/${id}`, this.httpOptionsForWorkouts);
+  }
 }

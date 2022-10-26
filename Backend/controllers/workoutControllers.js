@@ -8,7 +8,7 @@ const getWorkouts = asynHandler(async (req, res) => {
     res.json(workouts);
 })
 const createWorkout = asynHandler(async (req, res) => {
-  const { title, content, url } = req.body;
+  const { title, content, url ,calories} = req.body;
   let id = 0;
 
   
@@ -19,7 +19,7 @@ const createWorkout = asynHandler(async (req, res) => {
     } else {
 
     
-      const note = new Workout({title, content, url });
+      const note = new Workout({title, content, url,calories });
   
       const createdNote = await note.save();
   

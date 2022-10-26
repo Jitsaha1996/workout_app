@@ -1,38 +1,44 @@
 <app-headers [title]="title"></app-headers>
 <div class="container">
-    <h2 mat-dailog-title class="text-center py-4">
-        {{catalougeItems[0].title}}
-    </h2>
-    <div class="d-flex flex-column text-center justify-content-center">
-        <div>
-            <img class="workout-img" src="{{catalougeItems[0]?.url}}">
-        </div>
-        <div class="pt-5">
-            {{catalougeItems[0]?.content}}
-        </div>
-        <div class="pt-5">
-            <button mat-raised-button (click)="start()" class="btn btn-success mx-3" [disabled]="isstart">
-                Start
-            </button>
-            <button mat-raised-button (click)="end()" class="btn btn-secondary mx-3" [disabled]="!isstart">
-                Pause
-            </button>
-            <button mat-raised-button (click)="reset()" class="btn btn-danger mx-3">
-                Reset
-            </button>
-        </div>
-        <div class="pt-5">
-            <div class="h2">
-                {{showtime}}
-            </div>
-        </div>
-        <div class="pt-5">
-            <div class="h3">
-                Total Calories Burned
-            </div>
-            <div class="h3">
-                {{totalcalories/1000}} kcal
-            </div>
-        </div>
+  <h2 mat-dailog-title class="text-center py-4">
+    {{ catalougeItems?.title }}
+  </h2>
+  <div class="d-flex flex-column text-center justify-content-center">
+    <div>
+      <img class="workout-img" src="{{ catalougeItems?.url }}" />
     </div>
+    <div class="pt-5">
+      {{ catalougeItems?.content }}
+    </div>
+    <div class="pt-5">
+      <button
+        mat-raised-button
+        (click)="start()"
+        class="btn btn-success mx-3"
+        [disabled]="isstart"
+      >
+        Start
+      </button>
+      <button
+        mat-raised-button
+        (click)="end()"
+        class="btn btn-secondary mx-3"
+        [disabled]="!isstart"
+      >
+        Pause
+      </button>
+      <button mat-raised-button (click)="reset()" class="btn btn-danger mx-3">
+        Reset
+      </button>
+    </div>
+    <div class="pt-5">
+      <div class="h2">
+        {{ showtime }}
+      </div>
+    </div>
+    <div class="pt-5">
+      <div class="h3">Total Calories Burned</div>
+      <div class="h3">{{ totalcalories / 1000 }} kcal</div>
+    </div>
+  </div>
 </div>
