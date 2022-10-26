@@ -4,29 +4,26 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AppService {
   rootURL = 'http://localhost:5000/api';
+
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': "*",
-    },
-
-    )
+    })
   };
+
   httpOptionsForWorkouts = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': "*",
       'Authorization': `Bearer ${JSON.parse(localStorage.getItem("userInfo")).token}`
-    },
-
-    )
+    })
   };
+
   constructor(private http: HttpClient) { }
-  // getUsers() {
-  //   return this.http.get(this.rootURL + '/users',this.httpOptions);
-  // }
 
   addUser(user: any) {
     return this.http.post(this.rootURL + '/users', user, this.httpOptions);
