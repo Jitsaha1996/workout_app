@@ -15,26 +15,35 @@ export class AppService {
     })
   };
 
-  httpOptionsForWorkouts = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': "*",
-      'Authorization': `Bearer ${JSON.parse(localStorage.getItem("userInfo")).token}`
-    })
-  };
-
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   addUser(user: any) {
     return this.http.post(this.rootURL + '/users', user, this.httpOptions);
   }
+
   userLogin(user: any) {
     return this.http.post(this.rootURL + '/users/login', user, this.httpOptions);
   }
+
   fetchWorkouts() {
-    return this.http.get(this.rootURL + '/workouts', this.httpOptionsForWorkouts);
+    return this.http.get(this.rootURL + '/workouts', {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': "*",
+        'Authorization': `Bearer ${localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")).token : null}`
+      })
+    });
   }
+
   fetchSingleWorkouts(id: any) {
-    return this.http.get(this.rootURL + `/workouts/${id}`, this.httpOptionsForWorkouts);
+    return this.http.get(this.rootURL + `/workouts/${id}`, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': "*",
+        'Authorization': `Bearer ${localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")).token : null}`
+      })
+    });
   }
 }
