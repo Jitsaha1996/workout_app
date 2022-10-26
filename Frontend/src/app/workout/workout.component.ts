@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { catalouges } from "../../Constant/workoutsCatalouges";
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-workout',
@@ -11,6 +12,10 @@ import { catalouges } from "../../Constant/workoutsCatalouges";
 export class WorkoutComponent implements OnInit {
   title = "Workout";
   catalougeItems = {};
+  time = 0;
+  interval = null;
+  showtime = moment.utc(0).format('HH:mm:ss');
+  isstart = false;
 
   constructor(
     private route: ActivatedRoute
@@ -23,15 +28,22 @@ export class WorkoutComponent implements OnInit {
   }
 
   start() {
-
+    this.isstart = true;
+    this.interval = setInterval(() => {
+      this.time += 1;
+      this.showtime = moment.utc(this.time * 1000).format('HH:mm:ss');
+    }, 1000);
   }
 
   end() {
-
+    this.isstart = false;
+    clearInterval(this.interval);
   }
 
-  total() {
-
+  reset() {
+    this.isstart = false;
+    this.time = 0;
+    this.showtime = moment.utc(0).format('HH:mm:ss');
   }
 
 }

@@ -11,15 +11,20 @@
             {{catalougeItems[0]?.content}}
         </div>
         <div class="pt-5">
-            <button mat-raised-button (click)="start()" class="btn btn-success mx-3">
+            <button mat-raised-button (click)="start()" class="btn btn-success mx-3" [disabled]="isstart">
                 Start
             </button>
-            <button mat-raised-button (click)="end()" class="btn btn-danger mx-3">
-                End
+            <button mat-raised-button (click)="end()" class="btn btn-secondary mx-3" [disabled]="!isstart">
+                Pause
             </button>
-            <button mat-raised-button (click)="total()" class="btn btn-primary mx-3">
-                Total Calories Burned
+            <button mat-raised-button (click)="reset()" class="btn btn-danger mx-3">
+                Reset
             </button>
+        </div>
+        <div class="pt-5">
+            <div class="h2">
+                {{showtime}}
+            </div>
         </div>
     </div>
 </div>
