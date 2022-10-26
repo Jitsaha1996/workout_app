@@ -35,7 +35,6 @@ export class LoginComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     } else {
-      console.log(this.registerForm.getRawValue());
       this.appservice.userLogin(this.registerForm.getRawValue()).subscribe(response => {
         if (response) {
           localStorage.setItem("userInfo", JSON.stringify(response));

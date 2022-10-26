@@ -15,3 +15,20 @@ body {
 .toast-top-center {
     margin-top: 4rem;
 }
+
+/*-----------Scroll bar style chrome-----------*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #284a62b7;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #284a62;
+}

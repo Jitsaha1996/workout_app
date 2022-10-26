@@ -42,14 +42,12 @@ export class RegisterComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     } else {
-      console.log(this.registerForm.getRawValue());
       const payload = {
         name: this.registerForm.get("name").value,
         email: this.registerForm.get("email").value,
         password: this.registerForm.get("password").value
       }
       this.appservice.addUser(payload).subscribe(response => {
-        console.log(response)
         localStorage.setItem("userInfo", JSON.stringify(response));
         if (response) {
           this.router.navigateByUrl('/catalouge');

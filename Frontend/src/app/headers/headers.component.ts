@@ -16,9 +16,7 @@ export class HeadersComponent implements OnInit {
     private toastr: ToastrService
   ) { }
 
-  ngOnInit() {
-    console.log("userInfo", this.userInfo);
-  }
+  ngOnInit() { }
 
   tohome() {
     if (this.userInfo) {
