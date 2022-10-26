@@ -16,9 +16,7 @@ export class HeadersComponent implements OnInit {
     private toastr: ToastrService
   ) { }
 
-  ngOnInit() {
-    console.log("userInfo", this.userInfo);
-  }
+  ngOnInit() { }
 
   tohome() {
     if (this.userInfo) {
@@ -32,10 +30,7 @@ export class HeadersComponent implements OnInit {
   logout() {
     localStorage.clear();
     this.router.navigateByUrl('/');
-    this.toastr.success('Log Out Successfully!', undefined, {
-      positionClass: 'toast-top-center'
-    });
-
+    this.toastr.success('Log Out Successfully!', undefined);
   }
 
 }

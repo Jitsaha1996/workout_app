@@ -35,17 +35,12 @@ export class LoginComponent implements OnInit {
     if (this.registerForm.invalid) {
       return;
     } else {
-      console.log(this.registerForm.getRawValue());
       this.appservice.userLogin(this.registerForm.getRawValue()).subscribe(response => {
         if (response) {
           localStorage.setItem("userInfo", JSON.stringify(response));
           if (response) {
             this.router.navigateByUrl('/catalouge');
-
-            this.toastr.success(`Successfully logged in  ${JSON.parse(localStorage.getItem("userInfo")).name}`,
-              undefined, {
-              positionClass: 'toast-top-center'
-            });
+            this.toastr.success(`Successfully logged in  ${JSON.parse(localStorage.getItem("userInfo")).name}`, undefined);
           }
         }
       })

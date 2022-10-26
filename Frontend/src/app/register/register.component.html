@@ -52,14 +52,14 @@
                     </mat-form-field>
                 </div>
                 <div class="mt-3 text-center">
-                    <button mat-raised-button (click)="onNoClick()" class="btn btn-primary mx-3">
-                        Cancel
-                    </button>
                     <button mat-raised-button type="submit"
                         [disabled]="!registerForm.valid || registerForm?.get('password')?.value !== registerForm?.get('confirmPassword')?.value"
                         [ngClass]="!registerForm.valid || registerForm?.get('password')?.value !== registerForm?.get('confirmPassword')?.value ? 'btn-outline-success' : 'btn-success'"
                         class="btn mx-3">
                         Signup
+                    </button>
+                    <button mat-raised-button (click)="onNoClick()" class="btn btn-primary mx-3">
+                        Cancel
                     </button>
                 </div>
                 <div class="mt-3 text-center">

@@ -38,8 +38,11 @@ import { ToastrModule } from 'ngx-toastr';
     MatCardModule,
     MatTooltipModule,
     HttpClientModule,
-
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({
+      timeOut: 2000,
+      positionClass: 'toast-top-center',
+      preventDuplicates: true,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
