@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { catalouges } from "../../Constant/workoutsCatalouges";
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-catalouge',
@@ -9,20 +10,30 @@ import { catalouges } from "../../Constant/workoutsCatalouges";
 export class CatalougeComponent implements OnInit {
   title = "Workouts Catalouge";
   searchValue: string;
-  catalougeItems = catalouges;
+  catalougeItems: any;
+  allCatalouges: any;
 
-  constructor() { }
+  constructor(private appservice: AppService,) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.fetchCatalouges();
+  }
+
+  fetchCatalouges() {
+    this.appservice.fetchWorkouts().subscribe(response => {
+      this.catalougeItems = response;
+      this.allCatalouges = response;
+    })
+  }
 
   searchHandler(value: string): any {
     let serachResult = [];
-    this.catalougeItems = catalouges;
+    this.catalougeItems = this.allCatalouges;
 
     if (value.length) {
       serachResult = this.catalougeItems.filter(item => item.title.toLowerCase().includes(value.toLowerCase()));
     } else {
-      serachResult = catalouges;
+      serachResult = this.allCatalouges;
     }
 
     this.catalougeItems = serachResult;

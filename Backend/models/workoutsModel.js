@@ -5,7 +5,8 @@ const workoutSchema = mongoose.Schema(
         
     title: {
       type: String,
-      required: true,
+        required: true,
+        unique: true,
     },
     content: {
       type: String,
@@ -15,11 +16,7 @@ const workoutSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    user: {
-      type: mongoose.Schema.Types.ObjectId,
-      required: true,
-      ref: "User",
-    },
+   
   },
   {
     timestamps: true,

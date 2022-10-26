@@ -1,20 +1,25 @@
 const Workout=require('../models/workoutsModel');
-const asynHandler=require('express-async-handler');
+const asynHandler = require('express-async-handler');
+const uuid = require('uuid');
 // const jwtToken = require('../utils/generateTokes');
 const getWorkouts = asynHandler(async (req, res) => {
-    const workouts = await Workout.find({ user: req.user._id });
+ 
+    const workouts = await Workout.find();
     res.json(workouts);
 })
 const createWorkout = asynHandler(async (req, res) => {
-    const { title, content, url } = req.body;
+  const { title, content, url } = req.body;
+  let id = 0;
+
   
     if (!title || !content || !url) {
       res.status(400);
       throw new Error("Please Fill all the feilds");
       return;
     } else {
+
     
-      const note = new Workout({ user: req.user._id, title, content, url });
+      const note = new Workout({title, content, url });
   
       const createdNote = await note.save();
   

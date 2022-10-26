@@ -14,6 +14,15 @@ export class AppService {
 
     )
   };
+  httpOptionsForWorkouts = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': "*",
+      'Authorization': `Bearer ${JSON.parse(localStorage.getItem("userInfo")).token}`
+    },
+
+    )
+  };
   constructor(private http: HttpClient) { }
   // getUsers() {
   //   return this.http.get(this.rootURL + '/users',this.httpOptions);
@@ -24,5 +33,8 @@ export class AppService {
   }
   userLogin(user: any) {
     return this.http.post(this.rootURL + '/users/login', user, this.httpOptions);
+  }
+  fetchWorkouts() {
+    return this.http.get(this.rootURL + '/workouts', this.httpOptionsForWorkouts);
   }
 }

@@ -3,6 +3,7 @@ const asynHandler=require('express-async-handler');
 const jwtToken = require('../utils/generateTokes');
 
 
+
 const registerUsers=asynHandler(async(req,res)=>{
   const  {name,email,password,pic}=req.body;
   const userExist=await User.findOne({email})
