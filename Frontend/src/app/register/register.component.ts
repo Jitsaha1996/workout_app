@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { AppService } from '../app.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private frmBuilder: FormBuilder,
     private router: Router,
-    private appservice: AppService
+    private appservice: AppService,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit() {
@@ -51,6 +53,10 @@ export class RegisterComponent implements OnInit {
         localStorage.setItem("userInfo", JSON.stringify(response));
         if (response) {
           this.router.navigateByUrl('/catalouge');
+          this.toastr.success(`Successfully signup   ${JSON.parse(localStorage.getItem("userInfo")).name}`,
+            undefined, {
+            positionClass: 'toast-top-center'
+          });
         }
       }
       );

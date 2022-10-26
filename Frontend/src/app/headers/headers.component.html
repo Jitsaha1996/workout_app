@@ -10,9 +10,9 @@
       <div>
         <div class="d-flex align-items-center text-white fw-light">
           <i class="fa-solid fa-house px-4" (click)="tohome()" matTooltip="Home"></i>
-          <i class="fa-solid fa-right-from-bracket px-4" (click)="logout()" matTooltip="Logout"></i>
+          <i class="fa-solid fa-right-from-bracket px-4" *ngIf="userInfo" (click)="logout()" matTooltip="Logout"></i>
           <i class="fa-solid fa-circle-user fa-2x px-2"></i>
-          {{userInfo? userInfo?.name : "Guest"}}
+          {{userInfo? userInfo?.name?.split(" ")[0] : "Guest"}}
         </div>
       </div>
     </div>

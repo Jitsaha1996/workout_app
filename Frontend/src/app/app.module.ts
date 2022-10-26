@@ -13,6 +13,7 @@ import { CatalougeComponent } from './catalouge/catalouge.component';
 import { FooterComponent } from './footer/footer.component';
 import { WorkoutComponent } from './workout/workout.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     MatTooltipModule,
     HttpClientModule,
+
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

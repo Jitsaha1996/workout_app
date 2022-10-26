@@ -7,15 +7,16 @@ const notes=require('./data/nots');
 const dotenv=require('dotenv');
 const connectDb=require('./config/db');
 
-const userRoutes=require('./routes/userRoutes');
+const userRoutes = require('./routes/userRoutes');
+const workoutRoutes = require('./routes/workoutRoutes');
 const { notFound, errorHandler } = require('./middlewares/errorMiddleware');
 dotenv.config();
 connectDb();
 app.use(express.json());
 //api to fetch all the notes
-app.get('/api/notes',(req,res)=>{
-    res.json(notes);
-})
+// app.get('/api/workouts',(req,res)=>{
+//     res.json(notes);
+// })
 
 
 //api to fetch a single note
@@ -29,12 +30,8 @@ app.get('/api/notes',(req,res)=>{
 
 
 app.use('/api/users', userRoutes);
-// app.use(function (req, res, next) {
-//     res.header("Access-Control-Allow-Origin", "*");
-//     res.header("Access-Control-Allow-Headers", "Origin,X-Requested-With,Content-Type,Accept");
-//     res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, HEAD, OPTIONS");
-//     next();
-// });
+app.use('/api/workouts', workoutRoutes);
+
 
 app.use(notFound);
 app.use(errorHandler);
