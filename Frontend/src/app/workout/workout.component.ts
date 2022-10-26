@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { catalouges } from "../../Constant/workoutsCatalouges";
 import * as moment from 'moment';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-workout',
@@ -18,7 +19,8 @@ export class WorkoutComponent implements OnInit {
   isstart = false;
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit() {
@@ -29,19 +31,22 @@ export class WorkoutComponent implements OnInit {
 
   start() {
     this.isstart = true;
+    this.toastr.info(`Timer has started`, undefined);
     this.interval = setInterval(() => {
       this.time += 1;
-      this.showtime = moment.utc(this.time * 1000).format('HH:mm:ss');
+      this.showtime = moment.utc(this.time * 1000).format('HH:mm:ss:mm');
     }, 1000);
   }
 
   end() {
     this.isstart = false;
+    this.toastr.info(`Timer has paused`, undefined);
     clearInterval(this.interval);
   }
 
   reset() {
     this.isstart = false;
+    this.toastr.info(`Timer reseted`, undefined);
     this.time = 0;
     this.showtime = moment.utc(0).format('HH:mm:ss');
   }
