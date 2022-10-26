@@ -19,6 +19,7 @@ export class WorkoutComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('workoutId');
     this.catalougeItems = catalouges.filter(item => item._id === id);
+    this.title = this.title + ` - ${this.catalougeItems[0].title}`;
   }
 
   start() {
