@@ -45,6 +45,8 @@ export class LoginComponent implements OnInit {
             this.toastr.success(`Successfully logged in  ${JSON.parse(localStorage.getItem("userInfo")).name}`, undefined);
           }
         }
+      }, (err) => {
+        this.toastr.error(`Email or Password is wrong!`, undefined);
       })
     }
   }
